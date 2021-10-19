@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using System;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
 
@@ -45,6 +46,11 @@ namespace MonthCalendar
             Calendar calendar = (Calendar)sender;
             if (calendar.DisplayMode == CalendarMode.Month)
             {
+                DateTime d = calendar.DisplayDate;
+                int lastDay = DateTime.DaysInMonth(d.Year, d.Month);
+                //calendar.DisplayDate = Convert.ToDateTime(d.Year.ToString() + "." + d.Month.ToString() + "." + allDayMonth.ToString());
+                calendar.DisplayDate = new DateTime(d.Year, d.Month, lastDay);
+
                 calendar.SelectedDate = calendar.DisplayDate;
                 YearPicker1.IsDropDownOpen = false;
             }
