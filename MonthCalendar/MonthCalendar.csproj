@@ -15,4 +15,38 @@
     <PackageReference Include="MaterialDesignThemes" Version="4.2.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Update="FilterPartials\FilterNormTypes.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="FilterPartials\FilterEnergyResources.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="FilterPartials\FilterCostCenters.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="FilterPartials\FilterPeriod.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="FilterPartials\FilterNormTypes.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="FilterPartials\FilterEnergyResources.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="FilterPartials\FilterCostCenters.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="FilterPartials\FilterPeriod.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+
 </Project>

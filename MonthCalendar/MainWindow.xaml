@@ -14,7 +14,7 @@
         FontFamily="{DynamicResource MaterialDesignFont}"
         mc:Ignorable="d"
         Title="MainWindow" 
-        Height="600" 
+        Height="800" 
         Width="1200" 
         WindowStartupLocation="CenterScreen">
     <Window.Resources>
@@ -35,10 +35,20 @@
                           VerticalAlignment="Top"
                           Content="Enable Popup" />
                 <materialDesign:PopupBox StaysOpen="True"
-                                         PopupHorizontalOffset="0"
-                                         PopupVerticalOffset="0"
+                                         PlacementMode="RightAndAlignTopEdges"
                                          IsEnabled="{Binding IsChecked, ElementName=PopupEnabled}">
-                    <UserControl Content="{Binding FilterPanelContent}" />
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition  Height="50"/>
+                        </Grid.RowDefinitions>
+                        <StackPanel Grid.Row="0">
+                            <UserControl Content="{Binding FilterPeriodPanelContent}" />
+                            <UserControl Content="{Binding FilterCostCentersPanelContent}" />
+                            <UserControl Content="{Binding FilterEnergyResourcesPanelContent}" />
+                            <UserControl Content="{Binding FilterNormTypesPanelContent}" />
+                        </StackPanel>
+                    </Grid>
                 </materialDesign:PopupBox>
             </StackPanel>
         </StackPanel>

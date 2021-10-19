@@ -1,4 +1,5 @@
 ﻿using MaterialDesignThemes.Wpf;
+using MonthCalendar.FilterPartials;
 using System;
 using System.Linq;
 using System.Text.RegularExpressions;
@@ -13,11 +14,17 @@ namespace MonthCalendar
     /// </summary>
     public partial class MainWindow : Window
     {
-        public FilterPanel FilterPanelContent { get; set; }
+        public FilterPeriod FilterPeriodPanelContent { get; set; }
+        public FilterCostCenters FilterCostCentersPanelContent { get; set; }
+        public FilterEnergyResources FilterEnergyResourcesPanelContent { get; set;}
+        public FilterNormTypes FilterNormTypesPanelContent { get; set;}
         public MainWindow()
         {
             InitializeComponent();
-            FilterPanelContent = new FilterPanel();
+            FilterPeriodPanelContent = new FilterPeriod();
+            FilterCostCentersPanelContent = new FilterCostCenters();
+            FilterEnergyResourcesPanelContent = new FilterEnergyResources();
+            FilterNormTypesPanelContent = new FilterNormTypes();
             DataContext = this;
         }
         private readonly PaletteHelper _paletteHelper = new PaletteHelper();
